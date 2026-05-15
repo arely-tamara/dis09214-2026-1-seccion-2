@@ -8,8 +8,8 @@
 
   1. Rizo de cabello en forma helicoidal.
   2. Objeto cuya forma recuerda a la del bucle.
-  3. ...
-  4. ...
+  3. Proceso que se repite indefinidamente.
+  4. Informática. Serie de instrucciones que se repiten indefinidamente mientras no se cumpla una condición previamente establecida.
 
 ### LOOP
 
