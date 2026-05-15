@@ -38,3 +38,7 @@ elementos:
 for (inicialización variable; condición booleana; actualización){Lo que queremos que pase cuando la condición sea verdadera}
 
 for (let x=0 ; x <= width; x=x+1) {ellipse (x , 200, random(300))}
+
+### frameCount
+
+Variable numérica que registra la cantidad de fotogramas dibujados desde que comenzó el boceto. El valor de `frameCount` es 0 dentro de `setup()`. Se incrementa en 1 cada vez que finaliza la ejecución del código en `draw()`.
