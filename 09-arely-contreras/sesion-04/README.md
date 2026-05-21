@@ -42,15 +42,16 @@ ellipse(mouseX, mouseY, 100, 100);
 
 ## Explicación
 
-- `mouseX`  posición horizontal del cursor
-- `mouseY`  posición vertical del cursor
+* `mouseX`  posición horizontal del cursor
+  
+* `mouseY`  posición vertical del cursor
 
 ---
 
 # Variables del Canvas
 
-`width`  Ancho del canvas 
-`height` Alto del canvas 
+* `width`  Ancho del canvas 
+* `height` Alto del canvas 
 
 ## Ejemplo
 
@@ -63,17 +64,23 @@ console.log(height);
 
 # Variables del Mouse
 
- `mouseX`  Posición horizontal actual 
- `mouseY`  Posición vertical actual 
- `pmouseX`  Posición anterior del mouse 
- `mouseIsPressed`  Detecta si el mouse está presionado 
- `mouseButton`  Detecta qué botón se presionó 
+ * `mouseX`  Posición horizontal actual 
+ 
+ * `mouseY`  Posición vertical actual
+ 
+ * `pmouseX`  Posición anterior del mouse
+ 
+ * `mouseIsPressed`  Detecta si el mouse está presionado
+ 
+ * `mouseButton`  Detecta qué botón se presionó 
 
 # Variables del Teclado
 
- `key`  Última tecla presionada 
- `keyCode`  Código numérico de la tecla 
- `keyIsPressed`  Detecta si una tecla está presionada 
+ * `key`  Última tecla presionada
+ 
+ * `keyCode`  Código numérico de la tecla
+ 
+ * `keyIsPressed`  Detecta si una tecla está presionada 
 
 ## Ejemplo
 
@@ -87,8 +94,9 @@ if (keyIsPressed) {
 
 # Variables de Tiempo
 
-`frameCount`  Cantidad de cuadros transcurridos
-`deltaTime`  Tiempo entre frames
+* `frameCount`  Cantidad de cuadros transcurridos
+  
+* `deltaTime`  Tiempo entre frames
 
 ## Ejemplo
 
@@ -100,9 +108,11 @@ console.log(frameCount);
 
 # Variables de Ventana
 
- `windowWidth`  Ancho de la ventana 
- `windowHeight`  Alto de la ventana 
- `focused`  Detecta si la ventana tiene foco 
+* `windowWidth`  Ancho de la ventana
+  
+* `windowHeight`  Alto de la ventana
+  
+*`focused`  Detecta si la ventana tiene foco 
 
 ## Ejemplo
 
@@ -117,6 +127,7 @@ createCanvas(windowWidth, windowHeight);
 Para crear variables usamos:
 
 * `let`  variables dinámicas
+ 
 * `const`  variables constantes
 
 ## Declarar una variable
@@ -136,8 +147,6 @@ let x = 100;
 ```js
 ellipse(x, 200, 50, 50);
 ```
-
----
 
 # Diferencia entre let y const
 
@@ -177,8 +186,6 @@ let persona = {
 };
 ```
 
----
-
 # Acceder a propiedades
 
 Se utiliza notación de punto.
@@ -186,8 +193,6 @@ Se utiliza notación de punto.
 ```js
 console.log(persona.nombre);
 ```
-
----
 
 # Ejemplo en p5.js
 
@@ -210,8 +215,6 @@ function draw() {
 # random()
 
 La función `random()` genera números aleatorios.
-
----
 
 # Sintaxis
 
@@ -271,13 +274,9 @@ function setup() {
 }
 ```
 
----
-
 # map()
 
 La función `map()` transforma un valor de un rango a otro.
-
----
 
 # Sintaxis
 
@@ -285,15 +284,17 @@ La función `map()` transforma un valor de un rango a otro.
 map(valor, minOriginal, maxOriginal, minNuevo, maxNuevo);
 ```
 
----
-
 # Parámetros
 
- `valor`  Valor a transformar 
- `minOriginal`  Valor mínimo original 
- `maxOriginal`  Valor máximo original 
- `minNuevo`  Nuevo mínimo 
- `maxNuevo` Nuevo máximo 
+ * `valor`  Valor a transformar
+   
+ * `minOriginal`  Valor mínimo original
+    
+ * `maxOriginal`  Valor máximo original
+    
+ * `minNuevo`  Nuevo mínimo
+ 
+ * `maxNuevo` Nuevo máximo 
 
 # Ejemplo
 
@@ -325,8 +326,6 @@ function draw() {
 }
 ```
 
----
-
 # Conceptos Importantes
 
 ## Variables dinámicas
@@ -340,8 +339,6 @@ mouseX
 frameCount
 random()
 ```
-
----
 
 # Variables constantes
 
