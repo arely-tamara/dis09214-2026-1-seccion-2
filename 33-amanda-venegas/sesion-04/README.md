@@ -1,6 +1,3 @@
-## sesión 04 - 23/03
-
-
 # 🌸 Clase 10/04 - Datos dinámicos "Variables" 🌸
 
 ### ¿Que es una variable? 
