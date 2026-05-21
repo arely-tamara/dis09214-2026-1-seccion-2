@@ -4,10 +4,10 @@
 
 4 pilares:    
 
-1.DESCOMPOSICIÓN 
-2.RECONOCIMIENTO DE PATRONES  
-3.ABSTRACCIÓN  
-4.ALGORITMOS  
+1.Descomposición  
+2.Reconocimiento de patrones  
+3.Abstracción    
+4.Algoritmos    
 
 **Descomposición**   
 Consiste en tomar un problema grande y complejo y romperlo en partes más pequeñas y manejables.   
