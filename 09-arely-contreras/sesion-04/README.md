@@ -49,10 +49,8 @@ ellipse(mouseX, mouseY, 100, 100);
 
 # Variables del Canvas
 
-| Variable | Descripción |
-|---|---|
-| `width` | Ancho del canvas |
-| `height` | Alto del canvas |
+`width`  Ancho del canvas 
+`height` Alto del canvas 
 
 ## Ejemplo
 
@@ -63,27 +61,19 @@ console.log(width);
 console.log(height);
 ```
 
----
-
 # Variables del Mouse
 
-| Variable | Descripción |
-|---|---|
-| `mouseX` | Posición horizontal actual |
-| `mouseY` | Posición vertical actual |
-| `pmouseX` | Posición anterior del mouse |
-| `mouseIsPressed` | Detecta si el mouse está presionado |
-| `mouseButton` | Detecta qué botón se presionó |
-
----
+ `mouseX`  Posición horizontal actual 
+ `mouseY`  Posición vertical actual 
+ `pmouseX`  Posición anterior del mouse 
+ `mouseIsPressed`  Detecta si el mouse está presionado 
+ `mouseButton`  Detecta qué botón se presionó 
 
 # Variables del Teclado
 
-| Variable | Descripción |
-|---|---|
-| `key` | Última tecla presionada |
-| `keyCode` | Código numérico de la tecla |
-| `keyIsPressed` | Detecta si una tecla está presionada |
+ `key`  Última tecla presionada 
+ `keyCode`  Código numérico de la tecla 
+ `keyIsPressed`  Detecta si una tecla está presionada 
 
 ## Ejemplo
 
@@ -97,10 +87,8 @@ if (keyIsPressed) {
 
 # Variables de Tiempo
 
-| Variable | Descripción |
-|---|---|
-| `frameCount` | Cantidad de cuadros transcurridos |
-| `deltaTime` | Tiempo entre frames |
+`frameCount`  Cantidad de cuadros transcurridos
+`deltaTime`  Tiempo entre frames
 
 ## Ejemplo
 
@@ -112,11 +100,9 @@ console.log(frameCount);
 
 # Variables de Ventana
 
-| Variable | Descripción |
-|---|---|
-| `windowWidth` | Ancho de la ventana |
-| `windowHeight` | Alto de la ventana |
-| `focused` | Detecta si la ventana tiene foco |
+ `windowWidth`  Ancho de la ventana 
+ `windowHeight`  Alto de la ventana 
+ `focused`  Detecta si la ventana tiene foco 
 
 ## Ejemplo
 
@@ -130,8 +116,8 @@ createCanvas(windowWidth, windowHeight);
 
 Para crear variables usamos:
 
-- `let` → variables dinámicas
-- `const` → variables constantes
+* `let`  variables dinámicas
+* `const`  variables constantes
 
 ## Declarar una variable
 
@@ -181,8 +167,6 @@ Los objetos sirven para agrupar variables relacionadas.
 
 Funcionan como contenedores de información.
 
----
-
 # Sintaxis de un objeto
 
 ```js
@@ -222,8 +206,6 @@ function draw() {
   ellipse(circulo.x, circulo.y, circulo.tamaño);
 }
 ```
-
----
 
 # random()
 
@@ -307,15 +289,11 @@ map(valor, minOriginal, maxOriginal, minNuevo, maxNuevo);
 
 # Parámetros
 
-| Parámetro | Descripción |
-|---|---|
-| `valor` | Valor a transformar |
-| `minOriginal` | Valor mínimo original |
-| `maxOriginal` | Valor máximo original |
-| `minNuevo` | Nuevo mínimo |
-| `maxNuevo` | Nuevo máximo |
-
----
+ `valor`  Valor a transformar 
+ `minOriginal`  Valor mínimo original 
+ `maxOriginal`  Valor máximo original 
+ `minNuevo`  Nuevo mínimo 
+ `maxNuevo` Nuevo máximo 
 
 # Ejemplo
 
@@ -328,8 +306,6 @@ ellipse(200, 200, tamaño);
 ## Explicación
 
 Convierte el valor del mouse en un tamaño dinámico.
-
----
 
 # Ejemplo Completo
 
@@ -376,5 +352,3 @@ Ejemplo:
 ```js
 const tamaño = 100;
 ```
-
----
