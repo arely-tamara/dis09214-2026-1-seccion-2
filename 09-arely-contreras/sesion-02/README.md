@@ -1,4 +1,4 @@
-# sesión 02 - 20/03
+# sesión 02 - 20-03
 
  **Breve historia de la computación**
 
