@@ -180,9 +180,9 @@ Funcionan como contenedores de información.
 
 ```js
 let persona = {
-  nombre: "Arely",
-  edad: 20,
-  ciudad: "Santiago"
+  nombre: 
+  edad: 
+  ciudad: 
 };
 ```
 
