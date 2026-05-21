@@ -1,4 +1,4 @@
-# sesión 03 - 27/03
+# sesión 03 - 10/03
 
 # Introducción a p5.js
 
