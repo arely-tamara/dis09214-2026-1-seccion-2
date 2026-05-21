@@ -2,7 +2,7 @@
 
 # LOOPS WHILE & FOR
 
-## Definición
+## Definición:
 
 ### Bucle:
 
