@@ -60,8 +60,6 @@ El resultado visual consiste en:
 - Cursor personalizado interactivo
 - Respuestas visuales que cambian en tiempo real
 
----
-
 # Pensamiento Computacional
 
 ## Reglas del sistema
@@ -92,9 +90,7 @@ El sistema utiliza programación basada en variables dinámicas, condiciones y a
 - Arte político digital contemporáneo
 
 # Diagrama de Flujo
-![Diagrama de Flujo](![Uploading Gemini_Generated_Image_hfy2unhfy2unhfy2.png…])
-)
-
+<img width="1408" height="768" alt="Gemini_Generated_Image_hfy2unhfy2unhfy2" src="https://github.com/user-attachments/assets/c0476fed-9f03-4a1d-8f6f-4d03c73b2db1" />
 
 # Código p5.js
 
