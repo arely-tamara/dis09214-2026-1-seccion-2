@@ -170,3 +170,263 @@ function draw() {
 - https://p5js.org/es/
 - https://p5js.org/reference/
 
+
+
+# *Sesion 6*
+
+# FUNCIONES PROPIAS EN p5.js
+
+## ¿Qué es una función?
+
+Una función es un bloque de código que realiza una tarea específica.
+
+```javascript
+function miFuncion() {
+
+}
+```
+
+---
+
+# Pensamiento Computacional
+
+## 4 pilares
+
+1. Descomposición  
+2. Reconocimiento de patrones  
+3. Abstracción  
+4. Algoritmos  
+
+---
+
+## Descomposición
+
+Dividir un problema grande en partes pequeñas.
+
+### Ejemplo
+
+```javascript
+function dibujarFondo() {
+
+}
+
+function dibujarPersonaje() {
+
+}
+```
+
+---
+
+## Reconocimiento de patrones
+
+Identificar cosas que se repiten.
+
+### Ejemplo con for
+
+```javascript
+for (let i = 0; i < 10; i++) {
+
+  circle(i * 50, 250, 30);
+
+}
+```
+
+---
+
+## Abstracción
+
+Usar solo la información importante.
+
+### Ejemplo
+
+```javascript
+let tamaño;
+
+tamaño = map(mouseX, 0, width, 20, 200);
+```
+
+---
+
+## Algoritmos
+
+Pasos ordenados para resolver un problema.
+
+### Ejemplo
+
+```javascript
+if (mouseIsPressed) {
+
+  background(255, 0, 0);
+
+} else {
+
+  background(0);
+
+}
+```
+
+---
+
+# Tipos de interacción
+
+## Interacción discreta
+
+Sucede con eventos.
+
+```javascript
+function mousePressed() {
+
+  circle(mouseX, mouseY, 50);
+
+}
+```
+
+---
+
+## Interacción continua
+
+Reacciona constantemente al usuario.
+
+```javascript
+circle(mouseX, mouseY, 80);
+```
+
+---
+
+# Funciones propias
+
+## Sintaxis
+
+```javascript
+function nombreFuncion() {
+
+}
+```
+
+---
+
+## Ejemplo simple
+
+```javascript
+function setup() {
+  createCanvas(500, 500);
+}
+
+function draw() {
+  background(220);
+
+  dibujarCara();
+}
+
+function dibujarCara() {
+
+  fill(255);
+
+  circle(250, 250, 200);
+
+  fill(0);
+
+  circle(220, 220, 20);
+
+  circle(280, 220, 20);
+
+}
+```
+
+---
+
+# Modularidad
+
+Separar el código en partes ordenadas.
+
+```javascript
+function dibujarFondo() {
+
+}
+
+function dibujarTexto() {
+
+}
+
+function dibujarObjeto() {
+
+}
+```
+
+---
+
+# Reusabilidad
+
+Una función puede usarse muchas veces.
+
+```javascript
+function estrella(x, y) {
+
+  circle(x, y, 20);
+
+}
+
+estrella(100, 100);
+
+estrella(200, 200);
+
+estrella(300, 300);
+```
+
+---
+
+# Ejemplo completo
+
+```javascript
+function setup() {
+  createCanvas(600, 400);
+}
+
+function draw() {
+
+  background(30);
+
+  dibujarTitulo();
+
+  dibujarFigura(mouseX, mouseY);
+
+}
+
+function dibujarTitulo() {
+
+  fill(255);
+
+  textSize(24);
+
+  text("Funciones Propias", 180, 40);
+
+}
+
+function dibujarFigura(x, y) {
+
+  fill(0, 200, 255);
+
+  circle(x, y, 80);
+
+}
+```
+
+---
+
+# Conceptos aprendidos
+
+- Funciones propias
+- Modularidad
+- Reusabilidad
+- Interacción discreta
+- Interacción continua
+- Pensamiento computacional
+- for
+- if / else
+
+---
+
+# Links útiles
+
+- https://p5js.org/es/
+- https://p5js.org/reference/
