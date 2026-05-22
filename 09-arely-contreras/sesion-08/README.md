@@ -92,6 +92,10 @@ El sistema utiliza programación basada en variables dinámicas, condiciones y a
 # Diagrama de Flujo
 <img width="1408" height="768" alt="Gemini_Generated_Image_hfy2unhfy2unhfy2" src="https://github.com/user-attachments/assets/c0476fed-9f03-4a1d-8f6f-4d03c73b2db1" />
 
+# Link p5.js
+
+https://editor.p5js.org/rouuuseee/sketches/1S5GHAf3E
+
 # Código p5.js
 
 ```javascript
@@ -305,4 +309,5 @@ function draw() {
   image(imglupa, mouseX - 40, mouseY - 40, 80, 80); //Posiciona la imagen de la lupa en el lienzo según el movimiento del mouse en eje  x, y - Remplaza el cursor predeterminado
 }
 
+´´´Java Script
 
