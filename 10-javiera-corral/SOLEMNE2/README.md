@@ -142,6 +142,28 @@ DIAGRAMA DE FLUJO
 <img width="1920" height="1080" alt="diagrama de flujo A_C" src="https://github.com/user-attachments/assets/a9796842-1bc0-4228-ae23-65988de64d0d" />
 
 
+NUESTRO PROYECTO: label Maker
+-
+
+explicación de nuestro sistema:
+-
+• ¿Cuál es la regla de oro de tu sistema?
+
+el codigo que creamos funciona en base al reconocimiento facial de el usuario que interactua con el programa y en base a ese reconocimeinto arroja una bandera lGBTQ+ al azar que representa la etiqueta que se le otorga al usuario en base a su "apariencia" (detectar rostro = etiqueta de identidad).
+
+• ¿Cómo se relaciona esta lógica con la problemática de género elegida?
+
+con esta logica podemos representar como la sociedad simplifica al usuario a un simple objeto para detectar visualmente y ser "juzgado" por su apariencia la cual despues es analizada y etiquetada, deshumanizando al usuario. 
+• Input / Output y sistema
+¿Qué datos entran? (INPUT) reconocimiento facial del usuario 
+¿Cómo se procesan y transforman?
+¿Qué respuesta visual producen? (OUTPUT) se clasifica con una bandera LGBT al detectar tu rostro
+• Pensamiento computacional
+Reglas que gobiernan el sistema (inputs, procesos, outputs)
+Explicación del sistema de interactividad este sitema 
+
+
+
 
 
 
