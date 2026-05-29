@@ -113,5 +113,9 @@ function draw() {
     rect(0, i * alturaFranja, width, alturaFranja); // Dibuja un rectángulo en una posición x,y calculada por el índice i y la alturaFranja
   }
 }
-``` 
+```
+
+
+<img width="527" height="373" alt="image" src="https://github.com/user-attachments/assets/c6ac0228-4feb-4f31-829c-a86d855581d8" />
+
 
