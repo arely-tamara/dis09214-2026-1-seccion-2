@@ -206,3 +206,6 @@ function draw() {
   textSize(18);
   text("Mueve el mouse horizontalmente", width/2, height-20);
 }
+
+
+<img width="452" height="476" alt="image" src="https://github.com/user-attachments/assets/cdd7b302-7e4c-47af-b221-943295c93957" />
