@@ -1,4 +1,4 @@
-# sesión 07 - viernes 29/05
+# sesión 08 - viernes 29/05
 
 # Instrucciones EXAMEN
 
