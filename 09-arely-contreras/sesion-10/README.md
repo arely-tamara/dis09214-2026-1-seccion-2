@@ -1,212 +1,195 @@
-## sesión 10 - Viernes 05 junio
+### Sesión 10 Viernes 12 de junio
+# Diseño Responsivo e Imágenes en p5.js
 
-# Estados y Cámara Web
+## Diseño Responsivo — `windowResized()`
 
-## ¿Cómo crear un sketch con estados diferentes?
+### Paso 1 — Crear un canvas con dimensiones dinámicas
 
-Un **estado** es una variable que indica en qué "pantalla" se encuentra el programa. Según su valor, el sketch dibuja una cosa u otra.
-
-### Paso 1 — Crear y definir la variable de estado
-
-Al principio del código (fuera de las funciones), declarar una variable que guarda el estado actual. Empieza en `0`.
-
-```js
-let estado = 0; // 0 = Inicio, 1 = Experiencia, 2 = Final
-```
-
-### Paso 2 — Configurar el lienzo (`function setup`)
+Usar las variables integradas `windowWidth` y `windowHeight`, que leen constantemente el ancho y alto disponibles de la ventana del navegador.
 
 ```js
 function setup() {
-  createCanvas(400, 400);
-  textAlign(CENTER, CENTER);
-  textSize(24);
+  createCanvas(windowWidth, windowHeight);
 }
 ```
 
-### Paso 3 — Crear la estructura del estado (`function draw`)
+---
 
-Se usa un `switch`: dependiendo del valor de `estado`, el programa dibujará una pantalla u otra.
+### Paso 2 — Crear el evento `windowResized()`
+
+Si el usuario estira o encoge la ventana, el lienzo se adapta en tiempo real.
 
 ```js
+function windowResized() {
+  resizeCanvas(windowWidth, windowHeight);
+}
+```
+
+### Paso 3 — Usar valores relativos
+
+p5.js actualiza `width` y `height` automáticamente con el tamaño actual del lienzo. Todos los valores de posición y tamaño deben pensarse en relación proporcional a esas variables, usando fracciones y proporciones.
+
+```
+Centro del lienzo:         width / 2 , height / 2
+Un cuarto de la pantalla:  width * 0.25
+```
+
+```js
+function setup() {
+  createCanvas(windowWidth, windowHeight);
+}
+
 function draw() {
-  background(220);
+  background(240);
 
-  switch (estado) {
-    case 0:
-      pantallaInicio();
-      break;
-    case 1:
-      pantallaExperiencia();
-      break;
-    case 2:
-      pantallaFinal();
-      break;
-  }
+  fill(150, 150, 250);
+  noStroke();
+  rect(width * 0.05, height * 0.05, width * 0.2, height * 0.15);
+
+  fill(250, 100, 100);
+  ellipse(width * 0.5, height * 0.5, width * 0.2, height * 0.2);
+
+  stroke(50);
+  strokeWeight(width * 0.005);
+  noFill();
+  ellipse(width * 0.5, height * 0.5, width * 0.25, height * 0.25);
+
+  fill(100, 200, 150);
+  noStroke();
+  triangle(
+    width * 0.85, height * 0.1,
+    width * 0.75, height * 0.25,
+    width * 0.95, height * 0.25
+  );
 }
 ```
 
-### Paso 4 — Programar visualmente cada estado (funciones propias)
+### Paso 4 — Incluir un factor de referencia `min(width, height)`
 
-Cada función tiene un diseño y color diferente para que se note el cambio de pantalla.
-
-```js
-function pantallaInicio() {
-  background(135, 206, 250); // Azul claro
-  fill(0);
-  text("ESTADO 0: INICIO", width / 2, height / 2 - 20);
-  textSize(16);
-  text("Haz clic para continuar", width / 2, height / 2 + 20);
-}
-
-function pantallaExperiencia() {
-  background(144, 238, 144); // Verde claro
-  fill(0);
-  textSize(24);
-  text("ESTADO 1: JUEGO / EXPERIENCIA", width / 2, height / 2 - 20);
-
-  // Ejemplo: un círculo que sigue al mouse
-  fill(255, 100, 100);
-  ellipse(mouseX, mouseY, 40, 40);
-
-  fill(0);
-  textSize(16);
-  text("Haz clic para terminar", width / 2, height / 2 + 40);
-}
-
-function pantallaFinal() {
-  background(255, 182, 193); // Rosado claro
-  fill(0);
-  textSize(24);
-  text("ESTADO 2: FINAL", width / 2, height / 2 - 20);
-  textSize(16);
-  text("Haz clic para volver al inicio", width / 2, height / 2 + 20);
-}
-```
-
-### Paso 5 — La lógica del cambio y el reinicio
-
-Con `mousePressed()`: cada clic avanza al siguiente estado. Si llega más allá del estado 2, vuelve a 0.
+Se crea una variable global `referencia` que guarda el valor del lado más pequeño de la ventana en ese momento. Así los tamaños escalan de forma uniforme sin distorsión.
 
 ```js
-function mousePressed() {
-  // Avanzamos al siguiente estado
-  estado = estado + 1;
-
-  // Si pasamos del último estado (2), reiniciamos a 0
-  if (estado > 2) {
-    estado = 0;
-  }
-}
-```
-
-## Formas de cambiar entre estados
-
-### 1. Interacción con el teclado
-
-**1.1 Por barra espaciadora o Enter:**
-
-```js
-function keyPressed() {
-  if (key === ' ' || keyCode === ENTER) { // ' ' es el espacio
-    estado = estado + 1;
-    if (estado > 2) estado = 0;
-  }
-}
-```
-
-**1.2 Por teclas específicas (números):**
-
-```js
-function keyPressed() {
-  if (key === '1') estado = 0;
-  if (key === '2') estado = 1;
-  if (key === '3') estado = 2;
-}
-```
-
-### 2. Botones reales en la pantalla (HTML)
-
-Usando la librería de p5.js para crear botones HTML reales. Más profesional para menús.
-
-```js
-let botonSiguiente;
+let referencia;
 
 function setup() {
-  createCanvas(400, 400);
-
-  // Creamos el botón y le ponemos texto
-  botonSiguiente = createButton('Siguiente Pantalla');
-  botonSiguiente.position(150, 350); // Posición en la pantalla
-
-  // Cuando se haga clic en ÉSTE botón, se ejecuta cambiarEstado
-  botonSiguiente.mousePressed(cambiarEstado);
+  createCanvas(windowWidth, windowHeight);
+  referencia = min(width, height);
 }
 
-function cambiarEstado() {
-  estado = estado + 1;
-  if (estado > 2) estado = 0;
-}
-```
-
-### 3. Zonas de clic (botones dibujados con `rect` o `ellipse`)
-
-Si prefieres dibujar tus propios botones, se evalúa si el mouse estaba dentro de esa zona al hacer clic.
-
-```js
-function mousePressed() {
-  // Botón dibujado en X: 100, Y: 50, Ancho: 200, Alto: 50
-  if (mouseX > 100 && mouseX < 300 && mouseY > 50 && mouseY < 100) {
-    estado = estado + 1;
-    if (estado > 2) estado = 0;
-  }
-}
-```
-
-### 4. Interacciones automáticas (por tiempo)
-
-Ideal para una pantalla de introducción (Splash Screen) que dura 3 segundos y pasa sola al siguiente estado.
-
-```js
-// En el draw: si estás en el estado 0 y pasan 3 segundos
-if (estado === 0 && millis() > 3000) {
-  estado = 1; // Pasa automáticamente al estado 1
-}
-```
-
-## Cámara Web — `createCapture(VIDEO)`
-
-### ¿Cómo usarla?
-
-**1. Declarar la variable global** (fuera de las funciones):
-
-```js
-let captura; // Aquí se guardará el video de la cámara
-```
-
-**2. Inicializar en `function setup()`:**
-
-`createCapture(VIDEO)` pide permiso al navegador para encender la cámara. Es importante agregar `captura.hide()` para ocultar el video que HTML coloca por defecto abajo del lienzo.
-
-```js
-function setup() {
-  createCanvas(640, 480);
-
-  captura = createCapture(VIDEO);
-  captura.size(640, 480);
-  captura.hide(); // Oculta el elemento de video de HTML
-}
-```
-
-**3. Dibujar la cámara en `function draw()`:**
-
-p5.js toma cada frame de la cámara y lo dibuja en el lienzo en tiempo real con `image()`.
-
-```js
 function draw() {
-  background(0);
+  background(240);
 
-  // Dibujamos la captura en la posición (0, 0)
-  image(captura, 0, 0, width, height);
+  let xCentro = width / 2;
+  let yCentro = height / 2;
+
+  // El diámetro siempre será el 40% del lado más corto
+  let diametro = referencia * 0.4;
+
+  fill(250, 100, 100);
+  noStroke();
+  ellipse(xCentro, yCentro, diametro, diametro);
+}
+
+function windowResized() {
+  resizeCanvas(windowWidth, windowHeight);
+  referencia = min(width, height); // se actualiza también aquí
 }
 ```
+
+### Paso 5 — Usar `translate()`, `push()` y `pop()` (proyectos complejos)
+
+En lugar de hacer matemáticas complejas en cada figura, se usa `translate()` para mover el origen del mundo. Siempre envuelto en `push()` y `pop()` para aislar cada elemento.
+
+```js
+let referencia;
+
+function setup() {
+  createCanvas(windowWidth, windowHeight);
+  referencia = min(width, height);
+}
+
+function draw() {
+  background(240);
+
+  // 1. Rectángulo posicionado arriba a la izquierda
+  push();
+  translate(width * 0.05, height * 0.05);
+  fill(150, 150, 250);
+  noStroke();
+  rect(0, 0, referencia * 0.2, referencia * 0.15);
+  pop();
+
+  // 2. Círculo posicionado en el centro
+  let diametro = referencia * 0.25;
+  push();
+  translate(width / 2, height / 2);
+  fill(250, 100, 100);
+  noStroke();
+  ellipse(0, 0, diametro, diametro);
+  pop();
+}
+```
+
+## Agregar Imágenes — `loadImage()`
+
+### Paso 1 — Subir la imagen a p5.js
+
+1. Hacer clic en la flecha **(>)** en la esquina superior izquierda del editor para abrir el panel de archivos.
+2. Hacer clic en el **+** junto a *Files*.
+3. Seleccionar **Upload file**.
+4. Arrastrar la imagen o buscarla en el computador.
+5. **Recomendación:** usar nombres cortos, en minúsculas y sin espacios. Crear una carpeta llamada `ASSETS`.
+
+### Paso 2 — Declarar y precargar la imagen (`function preload`)
+
+La imagen se carga antes de que empiece el sketch usando `preload()`, lo que garantiza que esté lista antes del `setup()` y el `draw()`.
+
+```js
+let miImagen;
+
+function preload() {
+  miImagen = loadImage('assets/poli.jpg');
+}
+```
+
+### Paso 3 — Dibujar y dimensionar en el `draw()`
+
+La función `image()` requiere mínimo 3 argumentos, pero acepta 5 para controlar el tamaño.
+
+```
+image(nombreVariableImagen, x, y, ancho, alto);
+```
+
+```js
+let miImagen;
+
+function preload() {
+  miImagen = loadImage('assets/poli.jpg');
+}
+
+function setup() {
+  createCanvas(windowWidth, windowHeight);
+}
+
+function draw() {
+  background(240);
+  image(miImagen, 50, 50, 300, 200);
+}
+```
+
+## Distorsión de imagen — `loadPixels()`
+
+### ¿Qué hace `loadPixels()`?
+
+Toma todos los píxeles de la pantalla (o de una imagen) y los carga en memoria RAM, creando un acceso directo píxel por píxel para poder analizarlos y modificarlos de forma masiva y fluida.
+
+### Las tres funciones clave
+
+**`get(x, y)` — Lectura (el "ojo")**
+Va a la coordenada exacta (x, y) y extrae el color de ese píxel. Devuelve un arreglo `[Rojo, Verde, Azul, Alfa]` con valores de 0 a 255. Si se usa sin coordenadas (`imagen.get()`), clona el lienzo completo.
+
+**`set(x, y, nuevoColor)` — Escritura (el "pincel")**
+Va a la coordenada (x, y) e inyecta un color nuevo, reemplazando el color existente. Modifica el mapa de píxeles en memoria interna pero no dibuja inmediatamente.
+
+**`updatePixels()` — La actualización**
+Toma todos los cambios hechos con `set()` y los renderiza de golpe en pantalla. Es indispensable: sin ella los cambios no se ven.
