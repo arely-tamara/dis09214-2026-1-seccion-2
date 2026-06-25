@@ -1,5 +1,3 @@
-# Solemne 02
-# sesión 08 - 22/05 
 # SOLEMNE 2
 
 # FEMICIDIOS 2025: Violencia Global
