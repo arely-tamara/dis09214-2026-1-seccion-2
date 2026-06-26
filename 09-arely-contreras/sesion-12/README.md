@@ -1,4 +1,4 @@
-# sesión 12 - Viernes 26 de junio
+
 # Documentación del Proyecto: FEMICIDIOS - Violencia Global
 
 ## 1. Información del Proyecto
@@ -86,19 +86,17 @@ El sistema utiliza una estructura de estados combinada con la lectura de las coo
 ###### 6. Referentes
 
 
-Inspirado conceptualmente en las plataformas cartográficas para graficar la cantidad de muertes, además de las estadísticas Globales de la ONU (2025): El texto del Estado 1 replica los informes de las Naciones Unidas sobre la tasa de homicidios contra mujeres en el entorno familiar.
+## Inspirado conceptualmente en las plataformas cartográficas para graficar la cantidad de muertes, además de las estadísticas Globales de la ONU (2025): El texto del Estado 1 replica los informes de las Naciones Unidas sobre la tasa de homicidios contra mujeres en el entorno familiar.
 ---
 
-####### 7. Diagrama de Flujo
+###### 7. Diagrama de Flujo
+
+<img width="2609" height="6132" alt="Diagrama" src="https://github.com/user-attachments/assets/687ec0ed-e7ce-4b6b-86a2-83142e2b55d5" />
 
 
-![Uploading diagrama_flujo_p5js_v5.png…]()
+###### 8. Código de p5.js
+#### link de p5.js: https://editor.p5js.org/arely.contreras/full/B4AVrQ-0G
 
-
-
----
-
-######## 8. Código de p5.js
 
 ```javascript
 let img; //Declara imagen del mapa
