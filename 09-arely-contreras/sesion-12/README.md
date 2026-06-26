@@ -92,8 +92,8 @@ Inspirado conceptualmente en las plataformas cartográficas para graficar la can
 ####### 7. Diagrama de Flujo
 
 
+![Uploading diagrama_flujo_p5js_v5.png…]()
 
-![Diagrama de Flujo del Sistema]("C:\Users\arely\Downloads\diagrama_flujo_p5js_v5.png")
 
 
 ---
